@@ -7,7 +7,7 @@ import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox'
 import AddBoxIcon from '@material-ui/icons/AddBox';
 const Singleitem = (props) => {
     console.log(props);
-   const PF = "/Images/";
+   const PF = "/";
    
    const [counter , setCounter] = useState(1);
 
