@@ -112,7 +112,7 @@ const Footer = () => {
                     <li className="listitem_footer"><Link to="#"><ArrowRightAltIcon />Payment Methods</Link></li>
                     <li className="listitem_footer"><Link to="#"><ArrowRightAltIcon />Delivery</Link></li>
                     <li className="listitem_footer"><Link to="#"><ArrowRightAltIcon />Return & Exchanges</Link></li>
-                    <li className="listitem_footer"><Link to="/loginadmin"><ArrowRightAltIcon />For Admin</Link></li>
+                    {/* <li className="listitem_footer"><Link to="/loginadmin"><ArrowRightAltIcon />For Admin</Link></li> */}
                     
                     
                   </ul>
