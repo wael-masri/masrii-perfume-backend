@@ -1,0 +1,53 @@
+.big_div_brands {
+    display: flex;
+}
+
+.div_brands1{
+    flex: 2;
+    }
+    .div_brands2{
+        min-height: 518px;
+        flex:10;   
+    }
+.h3_title_side_brands {
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #a07d5a;
+    border-top: 2px solid #a07d5a;
+    margin-top: 10px;
+    padding: 7px;
+}    
+.p_side_brands {
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+.sidebarlist_brands{
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0px !important;
+}
+.sidebaritem_brands{
+    display: inline-block;
+    width: 50%;
+    color:#666;
+    margin: 5px 0px;
+    text-align: center;
+}
+.link_sidebar_brands{
+    color: inherit;
+    text-decoration: none;
+}
+.input_search {
+    border: 2px solid #a07d5a;
+    width: 231px;
+    height: 40px;
+    display: initial !important;
+}
+
+.input_search:focus {
+    border: 2px solid #a07d5a !important;
+    width: 231px !important;
+    height: 40px !important;
+    box-shadow: 0 0 0 0.2rem rgb(255 255 255) !important;
+}

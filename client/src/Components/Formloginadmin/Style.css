@@ -1,0 +1,83 @@
+
+.btn_adminlogin {
+    background: #111111;
+    color: #fff;
+    width: 200px;
+    padding: 9px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border: 2px solid #111111;
+    border-radius: 0px;
+    margin-top: 20px;
+}
+
+.btn_adminlogin:hover {
+    background: #a07d5a;
+    width: 200px;
+    padding: 9px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border: 2px solid #d4b08d;
+    color: #fff;
+    border-radius: 0px;
+    margin-top: 20px;
+}
+
+.input_adminlogin {
+    background: #111111;
+   
+    border: none;
+    border: 1px solid;
+    border-color: #111111;
+    border-radius: 0px;
+    color: #fff;
+}
+
+.input_adminlogin:focus {
+    background: #111111;
+  
+    border: none;
+    border-bottom: 2px solid;
+    border-color: #d4b08d;
+    border-radius: 0px;
+    color: #fff;
+    box-shadow: none;
+}
+
+.input_adminlogin::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.74) !important;
+  }
+
+  .label_adminlogin {
+      color: #fff;
+      font-weight: 600;
+  }
+
+  .hero_adminlogin {
+    position: relative; 
+    height: 700px;
+     padding: 60px;
+    width: 100%;
+   
+    background: black;
+}
+
+.first_adminlogin::before {    
+  content: "";
+  background-image: url('../../Images/login.jpg'); 
+  background-size: cover;
+  position: absolute;
+  background-position: center;
+  background-attachment: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.3;
+}
+
+.hero_adminlogin .h3_adminlogin {
+    letter-spacing: 2px;
+    color: #fff;
+    
+}

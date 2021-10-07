@@ -1,0 +1,27 @@
+.btn_editprofile {
+    background: #111111;
+    border-color: #111111;
+    border-radius: 0px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.btn_editprofile:hover {
+    background: #fff;
+    border-color: #111111;
+    border-radius: 0px;
+    color: #111111;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.span_labelprofile{
+    color:#a07d5a;
+    font-weight: 500;
+}
+.icon_image {
+    position: absolute;
+    font-size: 41px !important;
+    color: #a07d5a !important;
+    top: 0px;
+}

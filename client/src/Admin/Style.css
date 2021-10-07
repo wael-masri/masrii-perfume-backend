@@ -1,0 +1,76 @@
+
+.btn_addcat{
+    border-radius: 0px;
+    background: transparent;
+    color: #a07d5a;
+    border-color: #a07d5a;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.btn_addcat:hover{
+    border-radius: 0px;
+    background: #a07d5a;
+    color: #fff;
+    border-color: #a07d5a;
+}
+.MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color: #a07d5a !important;
+}
+.btn_savecat{
+    border-radius: 0px;
+    background: transparent;
+    color: #a07d5a;
+    border-color: #a07d5a;
+    float: right;
+
+}
+
+.btn_savecat:hover{
+    border-radius: 0px;
+    background: #a07d5a;
+    color: #fff;
+    border-color: #a07d5a;
+
+}
+
+.btn_editcat{
+    border-radius: 0px;
+    background: transparent;
+    color: #a07d5a;
+    border-color: #a07d5a;
+   
+}
+
+.btn_editcat:hover{
+    border-radius: 0px;
+    background: #a07d5a;
+    color: #fff;
+    border-color: #a07d5a;
+}
+
+.btn_addpost{
+    border-radius: 0px;
+    background: transparent;
+    color: #a07d5a;
+    border-color: #a07d5a;
+    float: right;
+    
+    width: 150px;
+
+
+}
+
+.btn_addpost:hover{
+    border-radius: 0px;
+    background: #a07d5a;
+    color: #fff;
+    border-color: #a07d5a;
+
+}
+.label_image {
+    position: absolute;
+    right: 21px;
+    top: 7px;
+}

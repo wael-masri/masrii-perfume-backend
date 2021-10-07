@@ -1,0 +1,53 @@
+.pricedel_card {
+    color: rgba(0, 0, 0, 0.54);
+}
+.div_price_card1 {
+    border-right: 2px solid #a07d5a;
+    text-align: center;
+}
+.div_price_card2 {
+    
+    text-align: center;
+}
+.p_price {
+    font-size: 12px;
+    margin: 0px;
+}
+
+.btn_addtocart {
+    background: #111111;
+    color: #fff;
+    border: 2px solid #111111;
+    border-radius: 0px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    -webkit-transition: all 0.4s ease;
+   
+    font-size: 13px;
+    margin-bottom: 6px;
+    margin-right: 6px;
+}
+
+
+.btn_addtocart:hover {
+    background: #fff;
+    color:#111111;
+    border: 2px solid #111111;
+    border-radius: 0px;
+   
+    font-weight:500;
+    font-size: 13px;
+    margin-bottom: 6px;
+    margin-right: 6px;
+  
+}
+
+.MuiPaper-elevation1 {
+    box-shadow: 12px 12px 25px 5px rgb(0 0 0/50%),
+     0px 1px 1px 0px rgb(0 0 0/0%),
+      0px 1px 3px 0px rgb(0 0 0/0%) !important;
+    
+}
+.MuiIconButton-root:hover {
+    background-color: transparent !important;
+}

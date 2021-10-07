@@ -1,0 +1,65 @@
+.h3_single {
+    margin-top: 180px;
+    font-size: 39px;
+    letter-spacing: 2px;
+}
+.desc_single {
+  
+    font-size: 25px;
+   
+    margin-top: 35px;
+    font-style: italic;
+    letter-spacing: 2px;
+
+}
+
+.old_price {
+    margin: 0px 10px;
+    color:rgb(16 16 16 / 39%);
+
+}
+.new_price {
+    margin: 0px 10px;
+    font-weight: 600;
+
+}
+.btn_add_single {
+    border-color: #111111;
+    background: #111111;
+    color: #fff;
+    border-radius: 0px;
+    padding: 11px 11px;
+    width: 150px;
+    font-weight: 600;
+    -webkit-transition: all 0.4s ease;
+}
+
+.btn_add_single:hover {
+    border-color: #111111;
+    background: #fff;
+    color: #111111;
+    border-radius: 0px;
+    padding: 11px 11px;
+    width: 150px;
+    font-weight: 600;
+}
+.btn_remove_single{
+    border-color: #111111;
+    background: #111111;
+    color: #fff;
+    border-radius: 0px;
+    padding: 11px 11px;
+    width: 200px;
+    font-weight: 600;
+    -webkit-transition: all 0.4s ease;  
+}
+
+.btn_remove_single:hover{
+    border-color: #111111;
+    background: #fff;
+    color: #111111;
+    border-radius: 0px;
+    padding: 11px 11px;
+    width: 200px;
+    font-weight: 600;  
+}

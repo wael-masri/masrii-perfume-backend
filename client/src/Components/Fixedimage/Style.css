@@ -1,0 +1,52 @@
+
+
+.hero .creative-info {
+    
+    padding-top: 20px;
+    width: 100%;
+   
+}
+
+.hero {
+    position: relative; 
+    height: 500px;
+    width: 100%;
+    display: flex;
+    background: black;
+}
+
+.first::before {    
+  content: "";
+  background-image: url('../../Images/homefixed.jpg'); 
+  background-size: cover;
+  position: absolute;
+  background-position: center;
+  background-attachment: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.3;
+}
+
+.info-title {
+  position: relative;
+  color: #fff; 
+  font-size: 50px;
+  line-height: 3;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+.p_fixed_image{
+    position: relative;
+  color: #ffffff;  
+  line-height: 1.5;
+  font-size: 23px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 50px;
+  
+}

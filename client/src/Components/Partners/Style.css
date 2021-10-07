@@ -1,0 +1,11 @@
+.img_partner{
+    width: 200px;
+    margin: auto;
+   
+}
+.slick-prev{
+    display: none !important;
+}
+.slick-next{
+    display: none !important;
+}
