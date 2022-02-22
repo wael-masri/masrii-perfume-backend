@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const Formloginadmin = () => {
   return (
     <div className="container-fluid">
-      <div style={{ height: "100px" }} ></div>
+      <div style={{ height: "100px" }}></div>
       <div className="row">
         <div className="col-md-6">
           <div
@@ -134,9 +134,7 @@ const Formloginadmin = () => {
           </div>
         </div>
 
-        <div
-          className="col-md-6 hero_adminlogin first_adminlogin"
-        >
+        <div className="col-md-6 hero_adminlogin first_adminlogin">
           <h3 className="h3_adminlogin">Sign In For Only Admin</h3>
           <p style={{ letterSpacing: "2px", color: "#fff", marginTop: "30px" }}>
             If you have any comments, suggestions, or questions that you would
@@ -162,25 +160,28 @@ const Formloginadmin = () => {
                   placeholder="Enter Your Password"
                 />
               </div>
-             
-             
-            
+
               <div className="col-md-12">
                 <button type="submit" className="btn btn_adminlogin">
                   <SendIcon /> Sign In
                 </button>
                 <br />
                 <br />
-                
-                <div style={{background:'rgb(160 125 90 / 30%)'}}><p style={{padding:'10px 7px',color:'#fff'}}>New to Masri Perfume?<Link to="/admin/posts" 
-                style={{color:"inherit",textDecoration:'none'}} >sign in.</Link></p></div>
+
+                <div style={{ background: "rgb(160 125 90 / 30%)" }}>
+                  <p style={{ padding: "10px 7px", color: "#fff" }}>
+                    New to Masri Perfume?
+                    <Link
+                      to="/admin/posts"
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      sign in.
+                    </Link>
+                  </p>
+                </div>
               </div>
-             
             </div>
-            
           </form>
-          
-                
         </div>
       </div>
       <div style={{ height: "100px" }}></div>

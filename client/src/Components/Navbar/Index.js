@@ -14,22 +14,22 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 
 const Navbar = (props) => {
-  const DB = "/"
+  const DB = "/";
   const lougoutmenu = () => {
     logout();
     localStorage.removeItem("account_masriparfume");
     window.location.replace("/");
   };
- 
-  if(isLogin()){
-    var storedClicks = JSON.parse(localStorage.getItem('account_masriparfume')); 
+
+  if (isLogin()) {
+    var storedClicks = JSON.parse(localStorage.getItem("account_masriparfume"));
   }
-  
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div className="row" style={{ width: "100%" }}>
-          <div className="col-md-12">
+          <div className="col-md-12 ">
             <ul className="list_nav_media">
               <li className="list_nav_media_item">
                 <a className="media_nav" href="">
@@ -63,7 +63,7 @@ const Navbar = (props) => {
                 {isLogin() && (
                   <>
                     <div className="dropdown">
-                    <a
+                      <a
                         className="btn_drop"
                         href="#"
                         role="button"
@@ -72,29 +72,29 @@ const Navbar = (props) => {
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
-                     
-                      {storedClicks.profilepic && 
-                       <img
-                       alt="profile"
-                       src={ DB + storedClicks.profilepic}
-                       style={{
-                         width: "40px",
-                         height: "40px",
-                         borderRadius: "50%",
-                       }}
-                     />}
-                      {!storedClicks.profilepic &&
-                       <img
-                       alt="profile"
-                       src={noimage}
-                       style={{
-                         width: "40px",
-                         height: "40px",
-                         borderRadius: "50%",
-                       }}
-                     /> }
+                        {storedClicks.profilepic && (
+                          <img
+                            alt="profile"
+                            src={DB + storedClicks.profilepic}
+                            style={{
+                              width: "40px",
+                              height: "40px",
+                              borderRadius: "50%",
+                            }}
+                          />
+                        )}
+                        {!storedClicks.profilepic && (
+                          <img
+                            alt="profile"
+                            src={noimage}
+                            style={{
+                              width: "40px",
+                              height: "40px",
+                              borderRadius: "50%",
+                            }}
+                          />
+                        )}
 
-                      
                         <DragIndicatorIcon />
                       </a>
 
@@ -111,7 +111,7 @@ const Navbar = (props) => {
                         <div
                           className="dropdown-item"
                           onClick={() => lougoutmenu()}
-                          style={{color:"red"}}
+                          style={{ color: "red" }}
                         >
                           <ExitToAppIcon /> Logout
                         </div>
@@ -143,9 +143,9 @@ const Navbar = (props) => {
             </a>
           </div>
 
-          <div className="col-md-12">
+          <div className="col-md-12 ">
             <button
-              className="navbar-toggler"
+              className="navbar-toggler "
               type="button"
               data-toggle="collapse"
               data-target="#navbarSupportedContent"
@@ -161,7 +161,7 @@ const Navbar = (props) => {
               id="navbarSupportedContent"
               style={{ textAlign: "center" }}
             >
-              <ul className="navbar-nav mr-auto">
+              <ul className="navbar-nav mr-auto nav_colorres">
                 <li className="nav-item ">
                   <Link className="nav-link btn_nav from-center  " to="/">
                     HOME <span className="sr-only">(current)</span>
@@ -173,7 +173,10 @@ const Navbar = (props) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link btn_nav from-center" to="/brands/all">
+                  <Link
+                    className="nav-link btn_nav from-center"
+                    to="/brands/all"
+                  >
                     BRANDS
                   </Link>
                 </li>

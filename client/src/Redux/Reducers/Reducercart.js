@@ -28,7 +28,7 @@ const Reducercart = (state = initial, action) => {
 
     bake_cookie("added", new_state);
 
-    console.log("modify from reducer", new_state);
+    // console.log("modify from reducer", new_state);
     return new_state;
   }
 
@@ -36,16 +36,16 @@ const Reducercart = (state = initial, action) => {
   else if (action.type == delete_from_cart) {
     const item_remove = action.index;
     let new_state1 = state;
-    console.log("from reduce1", new_state1);
-    console.log("from reduce remove id", item_remove);
+    // console.log("from reduce1", new_state1);
+    // console.log("from reduce remove id", item_remove);
     let new_state = new_state1.filter((ele) => ele._id !== item_remove);
-    console.log("from reducer2", new_state);
+    // console.log("from reducer2", new_state);
     bake_cookie("added", new_state);
     return new_state;
   }
   // clear all from cart
   else if (action.type == clear_all_cart) {
-    let new_state = { ...state };
+    let new_state = state;
     new_state = [];
     bake_cookie("added", new_state);
     return new_state;

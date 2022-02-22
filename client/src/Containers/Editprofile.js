@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Style.css";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import noimage from "../Images/noimage.jpg";
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 const Editprofile = (props) => {
   const [file, setFile] = useState(null);
 
@@ -18,14 +18,14 @@ const Editprofile = (props) => {
   //edit form submit
   const handlsub = async (e) => {
     e.preventDefault();
-    if(dataprof.username === "" || dataprof.username === ""){
-     alert("please fill that input to change..");
-    }else{
+    if (dataprof.username === "" || dataprof.username === "") {
+      alert("please fill that input to change..");
+    } else {
       const neweditprofile = {
         username: dataprof.username,
         email: dataprof.email,
       };
-  
+
       if (file) {
         const data = new FormData();
         const filename = Date.now() + file.name;
@@ -41,23 +41,31 @@ const Editprofile = (props) => {
           `/api/users/${props.location.state._id}`,
           neweditprofile
         );
-  
+
         res &&
-          localStorage.setItem("account_masriparfume", JSON.stringify(res.data));
+          localStorage.setItem(
+            "account_masriparfume",
+            JSON.stringify(res.data)
+          );
         res && window.location.replace("/profile");
       } catch (err) {
         console.log(err);
       }
-
     }
-    
   };
 
   return (
     <>
       <div style={{ height: "238px", background: "#a07d5a" }}></div>
-      <p style={{margin: '12px',
-       fontSize: '22px'}}><Link to="/profile" style={{color:"#a07d5a",textDecoration:"none"}}>Profile</Link> <ArrowForwardIosIcon/> Edit</p>
+      <p style={{ margin: "12px", fontSize: "22px" }}>
+        <Link
+          to="/profile"
+          style={{ color: "#a07d5a", textDecoration: "none" }}
+        >
+          Profile
+        </Link>{" "}
+        <ArrowForwardIosIcon /> Edit
+      </p>
       <div style={{ height: "100px" }}></div>
       <form onSubmit={handlsub}>
         <div className="container">
@@ -68,7 +76,7 @@ const Editprofile = (props) => {
                   src={URL.createObjectURL(file)}
                   alt="photo"
                   style={{
-                    width: "400px",
+                    width: "100%",
                     height: "400px",
                     borderRadius: "50%",
                   }}
@@ -78,7 +86,7 @@ const Editprofile = (props) => {
                 <img
                   src={DB + props.location.state.profilepic}
                   style={{
-                    width: "400px",
+                   width: "100%",
                     height: "400px",
                     borderRadius: "50%",
                   }}
@@ -88,7 +96,7 @@ const Editprofile = (props) => {
                 <img
                   src={noimage}
                   style={{
-                    width: "400px",
+                   width: "100%",
                     height: "400px",
                     borderRadius: "50%",
                   }}

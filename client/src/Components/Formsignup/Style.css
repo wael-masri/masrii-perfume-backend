@@ -88,3 +88,8 @@
     color: #fff !important;
     opacity: 1 !important;
 }
+@media (max-width: 992px) {
+    .signupres {
+        display: none;
+    }
+   }

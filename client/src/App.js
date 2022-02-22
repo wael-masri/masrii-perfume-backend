@@ -34,6 +34,7 @@ import Myorders from "./Containers/Myorders";
 import Editprofile from "./Containers/Editprofile";
 import Subscribe from "./Admin/Subscribe";
 import Messages from "./Admin/Messages";
+import Restorscrolltotop from "./Components/Restorscrolltotop/Index";
 
 function App(props) {
   //functin after running app
@@ -89,6 +90,7 @@ function App(props) {
   return (
     <>
       <BrowserRouter>
+      <Restorscrolltotop />
         <Switch>
           <Route path="/admin" component={ProtectedLayout} />
           <Route path="/" component={publicedLayout} />

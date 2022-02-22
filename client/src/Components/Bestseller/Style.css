@@ -67,3 +67,10 @@ flex: 10;
     text-decoration: none;
 }
 
+
+@media (max-width: 992px) {
+    .div_seller2 {
+       display: none !important;
+    }
+
+}

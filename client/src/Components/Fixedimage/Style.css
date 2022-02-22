@@ -50,3 +50,14 @@
     margin-bottom: 50px;
   
 }
+
+
+
+@media (max-width: 992px) {
+
+  .hero {
+     height: auto !important;
+  
+  }
+
+}

@@ -2,6 +2,16 @@
     display: flex;
     min-height: 70vh;
 }
+@media (max-width: 992px) {
+
+    .big_div_cart{
+      flex-direction: column !important;
+    } 
+    .rescart{
+        height: auto !important;
+    }
+}
+
 .div_cart{
 flex: 10;
 }

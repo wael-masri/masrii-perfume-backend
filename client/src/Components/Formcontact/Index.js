@@ -7,49 +7,33 @@ import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import SendIcon from "@material-ui/icons/Send";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 import axios from "axios";
 
 const Formcontact = () => {
-   
+  //validation for form
+  const validate = Yup.object({
+    name: Yup.string().required("Required !"),
+    phone: Yup.string().required("Required !"),
+    email: Yup.string()
+      .required("Required !")
+      .email("Please enter valid email.."),
+    message: Yup.string().required("Required !"),
+  });
 
-    //validation for form
-    const validate = Yup.object({
-      name: Yup.string().required("Required !"),
-      phone: Yup.string().required("Required !"),
-      email: Yup.string().required("Required !").email("Please enter valid email.."),
-      message: Yup.string().required("Required !"),
-      
-     
-    });
-    
-  
-     //send register to data base
-     const formsub = async (values, { resetForm }) => {
-      try {
-        const res = await axios.post(
-          "/api/messages/add",
-          values
-        );
-        NotificationManager.success('Message has been sent..', 'THANK YOU');  
+  //send register to data base
+  const formsub = async (values, { resetForm }) => {
+    try {
+      const res = await axios.post("/api/messages/add", values);
+      NotificationManager.success("Message has been sent..", "THANK YOU");
       res && resetForm();
-      } catch (err) {
-        console.log(err);
-      }
-     }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="container-fluid">
@@ -57,7 +41,7 @@ const Formcontact = () => {
       <div className="row">
         <div className="col-md-6">
           <div
-            className="row"
+            className="row dispalynoneres"
             style={{
               position: "absolute",
               right: "-29px",
@@ -187,84 +171,86 @@ const Formcontact = () => {
             like us to address, please don't hesitate to send us a message.
           </p>
           <Formik
-                initialValues={{ name: "", phone:"",email:"",message:"" }}
-                onSubmit={formsub}
-                validationSchema={validate}
-              >
-          <Form>
-            <div className="row" style={{ marginTop: "50px" }}>
-              <div className="col-md-12">
-                <label className="label_send">Name</label>
-                <Field
-                  type="text"
-                  name="name"
-                  className="form-control input_send"
-                  placeholder="Enter Your Name"
-                />
-                  <ErrorMessage
-                            component="div"
-                            name="name"
-                            className="erorr_contact"
-                          />
-              </div>
-              <div className="col-md-6">
-                <label className="label_send">Phone</label>
-                <Field
-                  type="number"
-                  name="phone"
-                  className="form-control input_send"
-                  placeholder="(00961)-12121212"
-                />
-                <ErrorMessage
-                            component="div"
-                            name="phone"
-                            className="erorr_contact"
-                          />
-              </div>
-              <div className="col-md-6">
-                <label className="label_send">Email</label>
-                <Field
-                  type="text"
-                  name="email"
-                  className="form-control input_send"
-                  placeholder="Enter Your Email"
-                />
-                <ErrorMessage
-                            component="div"
-                            name="email"
-                            className="erorr_contact"
-                          />
-              </div>
-              <div className="col-md-12">
-                <label className="label_send">Message</label>
-                
-                  <Field  name="message" 
-                  placeholder="Something.."
-                  render={({ field }) => <textarea
-                  {...field}
-                  
-                  className="form-control input_send"
-                  placeholder="Message.."
-                ></textarea>}
+            initialValues={{ name: "", phone: "", email: "", message: "" }}
+            onSubmit={formsub}
+            validationSchema={validate}
+          >
+            <Form>
+              <div className="row" style={{ marginTop: "50px" }}>
+                <div className="col-md-12">
+                  <label className="label_send">Name</label>
+                  <Field
+                    type="text"
+                    name="name"
+                    className="form-control input_send"
+                    placeholder="Enter Your Name"
                   />
-                <ErrorMessage
-                            component="div"
-                            name="message"
-                            className="erorr_contact"
-                          />
+                  <ErrorMessage
+                    component="div"
+                    name="name"
+                    className="erorr_contact"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label className="label_send">Phone</label>
+                  <Field
+                    type="number"
+                    name="phone"
+                    className="form-control input_send"
+                    placeholder="(00961)-12121212"
+                  />
+                  <ErrorMessage
+                    component="div"
+                    name="phone"
+                    className="erorr_contact"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label className="label_send">Email</label>
+                  <Field
+                    type="text"
+                    name="email"
+                    className="form-control input_send"
+                    placeholder="Enter Your Email"
+                  />
+                  <ErrorMessage
+                    component="div"
+                    name="email"
+                    className="erorr_contact"
+                  />
+                </div>
+                <div className="col-md-12">
+                  <label className="label_send">Message</label>
+
+                  <Field
+                    name="message"
+                    placeholder="Something.."
+                    render={({ field }) => (
+                      <textarea
+                        {...field}
+                        className="form-control input_send"
+                        placeholder="Message.."
+                      ></textarea>
+                    )}
+                  />
+                  <ErrorMessage
+                    component="div"
+                    name="message"
+                    className="erorr_contact"
+                  />
+                </div>
+                <div className="col-md-12">
+                  <button type="submit" className="btn btn_send">
+                    <SendIcon /> Send Message
+                  </button>
+                </div>
               </div>
-              <div className="col-md-12">
-                <button type="submit" className="btn btn_send">
-                  <SendIcon /> Send Message
-                </button>
-              </div>
-            </div>
-          </Form>
+            </Form>
           </Formik>
         </div>
       </div>
       <div style={{ height: "100px" }}></div>
-      <NotificationContainer/>
+      <NotificationContainer />
     </div>
   );
 };

@@ -9,3 +9,14 @@
 .slick-next{
     display: none !important;
 }
+
+@media (max-width: 992px) {
+    .img_partner{
+        width:150px !important;
+        padding: 15px 20px;
+      
+       
+    }
+
+}
+ 

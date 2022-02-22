@@ -32,3 +32,16 @@
 .div_carousel {
     height:577 ;
 }
+@media (max-width: 992px) {
+    .btn_header {
+         margin: auto !important; 
+        
+       
+    }
+
+    .h2_nav {
+       
+        margin-top: 56% !important;
+       
+    }
+}

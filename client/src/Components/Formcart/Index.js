@@ -1,15 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Style.css";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import EditIcon from "@material-ui/icons/Edit";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { isLogin } from "../../Privatepublicrouter/Utils";
 const Formcart = (props) => {
-  
-   var total_prices = 0 ;
+  var total_prices = 0;
 
-
-  
   console.log("statt", props.listcart);
   const [change, setChange] = useState(1);
   // increament quantity
@@ -77,10 +74,10 @@ const Formcart = (props) => {
             )}
             {props.listcart &&
               props.listcart.map((value, index) => {
-               total_prices = total_prices + value.new_price; 
+                total_prices = total_prices + value.new_price;
                 return (
                   <div
-                    className="col-md-12"
+                    className="col-md-12 rescart"
                     style={{
                       borderBottom: "1px solid rgb(17 17 17 / 14%)",
                       padding: "35px 20px",
@@ -177,7 +174,7 @@ const Formcart = (props) => {
                               onClick={() => {
                                 let newitemcart = value;
                                 newitemcart.qty = change;
-                                props.modifyCart(newitemcart,index);
+                                props.modifyCart(newitemcart, index);
                                 setChange(1);
                               }}
                               data-dismiss="modal"
@@ -211,41 +208,49 @@ const Formcart = (props) => {
           <h4 className="h4_total_cart">CART TOTAL</h4>
           <div className="item_total">
             <span>Subtotal</span>
-            <span style={{ float: "right", color: "#a07d5a" }}>{props.quantity_price}$</span>
+            <span style={{ float: "right", color: "#a07d5a" }}>
+              {props.quantity_price}$
+            </span>
           </div>
 
           <div className="item_total">
             <span>Total</span>
-            <span style={{ float: "right", color: "#a07d5a" }}>{props.quantity_price}$</span>
+            <span style={{ float: "right", color: "#a07d5a" }}>
+              {props.quantity_price}$
+            </span>
           </div>
-         
-         
-         {isLogin() === false &&
-         <>
-          <Link to="/order" style={{color:"inherit",TextDecoration:"none"}} >
-          <button className="btn btn_placeorder form-control" disabled="true">
-            Place Order
-          </button>
-          </Link>
-          <p className="p_total_side">
-            Login or Create an account to make order.
-          </p>
-         </>
-         }
-          {isLogin() &&
-         <>
-          <Link to="/order" style={{color:"inherit",TextDecoration:"none"}} >
-          <button className="btn btn_placeorder form-control" >
-            Place Order
-          </button>
-          </Link>
-          <p className="p_total_side">
-            Make order now.
-          </p>
-         </>
-         }
-         
 
+          {isLogin() === false && (
+            <>
+              <Link
+                to="/order"
+                style={{ color: "inherit", TextDecoration: "none" }}
+              >
+                <button
+                  className="btn btn_placeorder form-control"
+                  disabled="true"
+                >
+                  Place Order
+                </button>
+              </Link>
+              <p className="p_total_side">
+                Login or Create an account to make order.
+              </p>
+            </>
+          )}
+          {isLogin() && (
+            <>
+              <Link
+                to="/order"
+                style={{ color: "inherit", TextDecoration: "none" }}
+              >
+                <button className="btn btn_placeorder form-control">
+                  Place Order
+                </button>
+              </Link>
+              <p className="p_total_side">Make order now.</p>
+            </>
+          )}
         </div>
       </div>
     </div>

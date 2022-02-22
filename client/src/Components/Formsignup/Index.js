@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import "./Style.css";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import CallIcon from "@material-ui/icons/Call";
@@ -10,55 +10,40 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const Formsignup = () => {
-
-
-
-
-
-
-
-
   //validation for form
   const validate = Yup.object({
-    username:
-      Yup.string()
-      .required("Required !"),
+    username: Yup.string().required("Required !"),
     email: Yup.string().email("Email is invalid").required("Required !"),
-    password:
-      Yup.string()
-      .required("Required !"),
+    password: Yup.string().required("Required !"),
     confirm: Yup.string()
-      
-     
-     .oneOf([Yup.ref('password'), null], 'Passwords must match')
+
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
 
       .required("Required !"),
   });
- //send register to data base
+  //send register to data base
   const formsub = async (values) => {
     console.log(values);
     try {
-      const res = await axios.post("/api/users/register",values);
+      const res = await axios.post("/api/users/register", values);
       res && window.location.replace("/signin");
-      
     } catch (err) {
       console.log(err);
-      
     }
   };
 
   return (
     <Formik
-      initialValues={{ username: "", email: "", password: "",confirm:"" }}
+      initialValues={{ username: "", email: "", password: "", confirm: "" }}
       onSubmit={formsub}
       validationSchema={validate}
     >
       <div className="container-fluid">
         <div style={{ height: "100px" }}></div>
-        <div className="row">
+        <div className="row ">
           <div className="col-md-6">
             <div
-              className="row"
+              className="row signupres"
               style={{
                 position: "absolute",
                 right: "-29px",
@@ -196,7 +181,11 @@ const Formsignup = () => {
                     className="form-control input_signup"
                     placeholder="Enter Your Username"
                   />
-                  <ErrorMessage component='div' name='username' className='erorr' />
+                  <ErrorMessage
+                    component="div"
+                    name="username"
+                    className="erorr"
+                  />
                 </div>
                 <div className="col-md-12">
                   <label className="label_signup">Email</label>
@@ -206,7 +195,11 @@ const Formsignup = () => {
                     className="form-control input_signup"
                     placeholder="Enter Your Email"
                   />
-                  <ErrorMessage component='div' name='email' className='erorr' />
+                  <ErrorMessage
+                    component="div"
+                    name="email"
+                    className="erorr"
+                  />
                 </div>
                 <div className="col-md-12">
                   <label className="label_signup">Password</label>
@@ -216,7 +209,11 @@ const Formsignup = () => {
                     className="form-control input_signup"
                     placeholder="Enter Your Password"
                   />
-                  <ErrorMessage component='div' name='password' className='erorr' />
+                  <ErrorMessage
+                    component="div"
+                    name="password"
+                    className="erorr"
+                  />
                 </div>
                 <div className="col-md-12">
                   <label className="label_signup">Confirm Password</label>
@@ -226,7 +223,11 @@ const Formsignup = () => {
                     className="form-control input_signup"
                     placeholder="Repeat Your Password"
                   />
-                  <ErrorMessage component='div' name='confirm' className='erorr' />
+                  <ErrorMessage
+                    component="div"
+                    name="confirm"
+                    className="erorr"
+                  />
                 </div>
 
                 <div className="col-md-12">
