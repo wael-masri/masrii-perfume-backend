@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Post = require("../models/Post");
 const Category = require("../models/Category");
 
-//ADD CATEGORY 
+//ADD CATEGORY
 router.post("/add", async (req, res) => {
   try {
     const newCat = new Category({
@@ -37,7 +37,6 @@ router.put("/:id", async (req, res) => {
         // HERE FOR MULTI DOCUMENTS UPDATED (ALL)
       }
     );
-   
 
     const updatedCategory = await Category.findByIdAndUpdate(
       req.params.id,

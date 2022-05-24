@@ -13,7 +13,6 @@ const multer = require("multer");
 const path = require("path");
 require("dotenv").config({ path: "./config.env" });
 
-
 // HERE FOR CONNECT TO LOCALHOST 3000 WITHOUT PROBLEMS
 app.use(
   cors({
@@ -24,7 +23,7 @@ app.use(
 
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-//FOR CONNECTION WITH DATA BASE MONGO DB 
+//FOR CONNECTION WITH DATA BASE MONGO DB
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -59,7 +58,6 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 app.delete("/api/:name", (req, res) => {
   try {
     fs.unlinkSync("./Images/" + req.params.name);
-   
   } catch (err) {
     console.error(err);
   }
@@ -67,8 +65,7 @@ app.delete("/api/:name", (req, res) => {
 
 //end upload
 
-
-//PATHES FOR REST API 
+//PATHES FOR REST API
 app.use("/api/users", usersRoute);
 app.use("/api/categories", categoriesRoute);
 app.use("/api/posts", postsRoute);
@@ -77,23 +74,21 @@ app.use("/api/subscribes", subscribesRoute);
 app.use("/api/messages", messagesRoute);
 
 // serve static assets if in production
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname,'/client/build')));
-  app.use(express.static(path.join(__dirname,'/Images')));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.use(express.static(path.join(__dirname, "/Images")));
 
- app.get('*', (req,res) => {
-   res.sendFile(path.join(__dirname,'client', 'build', 'index.html'));
- })
-
-}else{
-  app.get('/',(req,res) => {
-     res.send('api running');
-  })
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("api running");
+  });
 }
 
-
 // BACKEND RUNMIN IN POST 5000 HERE
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Backend is running.. ${port}`);
 });
