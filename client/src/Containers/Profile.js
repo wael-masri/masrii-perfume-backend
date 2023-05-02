@@ -18,7 +18,7 @@ const Profile = () => {
       const storedClicks = await JSON.parse(
         localStorage.getItem("account_masriparfume")
       );
-      const res = await axios.get(`/api/users/${storedClicks._id}`);
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/users/${storedClicks._id}`);
       setDataprof(res.data);
     };
     fetch();
@@ -35,7 +35,7 @@ const Profile = () => {
 
       try {
         const res = await axios.put(
-          `/api/users/changepassword/${dataprof._id}`,
+          `${process.env.REACT_APP_URL_BACKEND}/api/users/changepassword/${dataprof._id}`,
           neweditprofile
         );
         res && window.location.reload();
@@ -45,7 +45,7 @@ const Profile = () => {
     }
   };
 
-  const DB = "/";
+  const DB = `${process.env.REACT_APP_URL_BACKEND}/`;
 
   return (
     <>
@@ -60,7 +60,7 @@ const Profile = () => {
               <img
                 src={DB + dataprof.profilepic}
                 alt="photo"
-                style={{ width: "100%", height: "400px", borderRadius: "50%",padding:"5px 0px" }}
+                style={{ width: "50%", height: "400px", borderRadius: "10%",padding:"5px 0px",objectFit:"cover" }}
               />
             )}
             {!dataprof.profilepic && (
@@ -137,7 +137,7 @@ const Profile = () => {
                       </div>
                       <div className="modal-footer">
                         <button
-                          type="button"
+                         
                           type="submit"
                           className="btn btn-primary"
                         >

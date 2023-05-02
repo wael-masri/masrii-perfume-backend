@@ -99,7 +99,6 @@ const Singleitem = (props) => {
           <AddBoxIcon
             onClick={() => inc()}
             style={{ borderRadius: "50%" }}
-            style={{ color: "#a07d5a" }}
           />
         </div>
       );

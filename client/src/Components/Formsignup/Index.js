@@ -25,7 +25,7 @@ const Formsignup = () => {
   const formsub = async (values) => {
     console.log(values);
     try {
-      const res = await axios.post("/api/users/register", values);
+      const res = await axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/users/register`, values);
       res && window.location.replace("/signin");
     } catch (err) {
       console.log(err);

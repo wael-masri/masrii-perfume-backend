@@ -10,7 +10,7 @@ export const fetchdata = () => {
   return (dispatch) => {
     dispatch(fetchDataRequest);
     axios
-      .get("/api/posts/get/data")
+      .get(`${process.env.REACT_APP_URL_BACKEND}/api/posts/get/data`)
       .then((response) => {
         const data_fetching = response.data;
 

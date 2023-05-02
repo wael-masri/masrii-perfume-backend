@@ -24,7 +24,7 @@ const Footer = () => {
   const [datacategories, setDatacategories] = useState([]);
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/categories/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/categories/`);
       setDatacategories(res.data);
       console.log(res.data);
     };
@@ -39,7 +39,7 @@ const Footer = () => {
       email: emailsub,
     };
     try {
-      const res = await axios.post("/api/subscribes/add", newsub);
+      const res = await axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/subscribes/add`, newsub);
       res && window.location.reload();
       setEmailsub("");
     } catch (err) {

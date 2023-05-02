@@ -33,7 +33,7 @@ const Formorder = (props) => {
       };
 
       try {
-        const res = await axios.post("/api/orders/add", neworder);
+        const res = await axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/orders/add`, neworder);
         props.clearToCart();
         NotificationManager.info("Order has been created successfully..");
         res && window.location.replace("/");

@@ -12,7 +12,7 @@ export default function Posts() {
   //GET DATA FROM DATABASE
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/posts/get/data");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/posts/get/data`);
       setDataposts(res.data);
       console.log(res.data);
     };
@@ -22,9 +22,9 @@ export default function Posts() {
   //DELETE POST
   const handldeletepost = (id, name) => {
     axios
-      .delete(`/api/posts/${id}`)
+      .delete(`${process.env.REACT_APP_URL_BACKEND}/api/posts/${id}`)
       .then(() => {
-        axios.delete(`/api/${name}`);
+        axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/${name}`);
       })
       .then(() => {
         alert("post has been deleted..");

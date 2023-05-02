@@ -30,7 +30,7 @@ export default function Categories(props) {
     console.log(values);
     try {
       const res = await axios.post(
-        "/api/categories/add",
+        `${process.env.REACT_APP_URL_BACKEND}/api/categories/add`,
         values
       );
       res && window.location.reload();
@@ -41,7 +41,7 @@ export default function Categories(props) {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/categories/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/categories/`);
       setDatacategories(res.data);
       console.log(res.data);
     };
@@ -50,7 +50,7 @@ export default function Categories(props) {
 
   //DELETE CATEGORY
   const handldeletecategory = (id) => {
-    axios.delete(`/api/categories/${id}`).then(() => {
+    axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/categories/${id}`).then(() => {
       alert("Category has been deleted..");
       window.location.reload();
     });

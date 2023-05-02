@@ -12,7 +12,7 @@ export default function Users() {
   //GET DATA FROM DATABASE
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/users/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/users/`);
       setDatausers(res.data);
     };
     fetch();
@@ -20,7 +20,7 @@ export default function Users() {
 
   // DELETE CATEGORY
   const handldeleteuser = (id) => {
-    axios.delete(`/api/users/${id}`).then(() => {
+    axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/users/${id}`).then(() => {
      alert("User has been deleted..");
       window.location.reload();
      

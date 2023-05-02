@@ -6,17 +6,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import Rating from "@material-ui/lab/Rating";
 import QueueIcon from "@material-ui/icons/Queue";
-import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
-import SentimentDissatisfiedIcon from "@material-ui/icons/SentimentDissatisfied";
-import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";
-import SentimentSatisfiedAltIcon from "@material-ui/icons/SentimentSatisfiedAltOutlined";
-import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 import Box from "@material-ui/core/Box";
 import { Link } from "react-router-dom";
 
@@ -40,50 +30,11 @@ const useStyles_card = makeStyles((theme) => ({
   },
 }));
 
-// const StyledRating = withStyles({
-//   iconFilled: {
-//     color: "#ff6d75",
-//   },
-//   iconHover: {
-//     color: "#ff3d47",
-//   },
-// })(Rating);
-
-// const customIcons = {
-//   1: {
-//     icon: <SentimentVeryDissatisfiedIcon />,
-//     label: "Very Dissatisfied",
-//   },
-//   2: {
-//     icon: <SentimentDissatisfiedIcon />,
-//     label: "Dissatisfied",
-//   },
-//   3: {
-//     icon: <SentimentSatisfiedIcon />,
-//     label: "Neutral",
-//   },
-//   4: {
-//     icon: <SentimentSatisfiedAltIcon />,
-//     label: "Satisfied",
-//   },
-//   5: {
-//     icon: <SentimentVerySatisfiedIcon />,
-//     label: "Very Satisfied",
-//   },
-// };
 
 const Carditem = (props) => {
-  const PF = "/";
+  const PF = `${process.env.REACT_APP_URL_BACKEND}/`;
   const classes_side = useStyles_card();
 
-  // function IconContainer(props) {
-  //   const { value, ...other } = props;
-  //   return <span {...other}>{customIcons[value].icon}</span>;
-  // }
-
-  // IconContainer.propTypes = {
-  //   value: PropTypes.number.isRequired,
-  // };
   return (
     <>
       <Card className={classes_side.root_card}>

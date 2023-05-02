@@ -33,12 +33,12 @@ const Editprofile = (props) => {
         data.append("file", file);
         neweditprofile.profilepic = filename;
         try {
-          await axios.post("/api/upload", data);
+          await axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/upload`, data);
         } catch (err) {}
       }
       try {
         const res = await axios.put(
-          `/api/users/${props.location.state._id}`,
+          `${process.env.REACT_APP_URL_BACKEND}/api/users/${props.location.state._id}`,
           neweditprofile
         );
 
@@ -86,9 +86,10 @@ const Editprofile = (props) => {
                 <img
                   src={DB + props.location.state.profilepic}
                   style={{
-                   width: "100%",
+                   width: "50%",
                     height: "400px",
-                    borderRadius: "50%",
+                    borderRadius: "10%",
+                    objectFit:"cover"
                   }}
                 />
               )}

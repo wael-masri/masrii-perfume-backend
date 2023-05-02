@@ -15,7 +15,7 @@ export default function Myorders() {
         localStorage.getItem("account_masriparfume")
       );
       console.log("userid", storedClicks._id);
-      const res = await axios.get(`/api/orders/?user_id=${storedClicks._id}`);
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/orders/?user_id=${storedClicks._id}`);
       setDatamyorders(res.data);
       console.log(datamyorders);
     };

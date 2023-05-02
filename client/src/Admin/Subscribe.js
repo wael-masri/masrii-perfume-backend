@@ -24,7 +24,7 @@ export default function Subscribe(props) {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/subscribes/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/subscribes/`);
       setDatasubscribe(res.data);
       console.log(res.data);
     };
@@ -33,7 +33,7 @@ export default function Subscribe(props) {
 
   //DELETE CATEGORY
   const handldeletesubscribe = (id) => {
-    axios.delete(`/api/subscribes/${id}`).then(() => {
+    axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/subscribes/${id}`).then(() => {
       alert("subscribe has been deleted..");
       window.location.reload();
     });

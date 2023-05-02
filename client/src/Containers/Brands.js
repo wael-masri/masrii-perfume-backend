@@ -6,7 +6,7 @@ const Brands = (props) => {
   const [datacategories, setDatacategories] = useState([]);
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/categories/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/categories/`);
       setDatacategories(res.data);
       console.log(res.data);
     };

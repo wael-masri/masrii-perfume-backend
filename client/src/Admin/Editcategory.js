@@ -26,7 +26,7 @@ const [valuesbyid , setValuesbyid] = useState({
     console.log(values);
     
     try {
-      const res = await axios.put(`/api/categories/${props.location.state._id}`,values);
+      const res = await axios.put(`${process.env.REACT_APP_URL_BACKEND}/api/categories/${props.location.state._id}`,values);
       res && window.location.replace("/admin/categories");
       
     } catch (err) {

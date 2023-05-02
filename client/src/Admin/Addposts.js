@@ -18,7 +18,7 @@ const Addposts = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/categories/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/categories/`);
       setDatabrands(res.data);
       console.log(res.data);
     };
@@ -46,12 +46,12 @@ const Addposts = () => {
       data.append("file", file);
       newpost.image_link = filename;
       try {
-        await axios.post("/api/upload", data);
+        await axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/upload`, data);
       } catch (err) {}
     }
     try {
       const res = await axios.post(
-        "/api/posts/add",
+        `${process.env.REACT_APP_URL_BACKEND}/api/posts/add`,
         newpost
       );
       res && window.location.replace("/admin/posts");

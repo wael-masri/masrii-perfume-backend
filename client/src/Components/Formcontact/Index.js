@@ -27,7 +27,7 @@ const Formcontact = () => {
   //send register to data base
   const formsub = async (values, { resetForm }) => {
     try {
-      const res = await axios.post("/api/messages/add", values);
+      const res = await axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/messages/add`, values);
       NotificationManager.success("Message has been sent..", "THANK YOU");
       res && resetForm();
     } catch (err) {

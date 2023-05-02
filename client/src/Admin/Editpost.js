@@ -21,7 +21,7 @@ const Editpost = (props) => {
   const [ischangefile, setIschangefile] = useState(false);
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/categories/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/categories/`);
       setDatabrands(res.data);
       console.log(res.data);
     };
@@ -50,15 +50,15 @@ const Editpost = (props) => {
       data.append("file", file);
       neweditpost.image_link = filename;
       try {
-        await axios.post("/api/upload", data);
+        await axios.post(`${process.env.REACT_APP_URL_BACKEND}/api/upload`, data);
       } catch (err) {}
     }
     try {
       if (ischangefile) {
-        axios.delete(`/api/${props.location.state.image_link}`);
+        axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/${props.location.state.image_link}`);
       }
       const res = await axios.put(
-        `/api/posts/${props.location.state._id}`,
+        `${process.env.REACT_APP_URL_BACKEND}/api/posts/${props.location.state._id}`,
         neweditpost
       );
       res && window.location.replace("/admin/posts");

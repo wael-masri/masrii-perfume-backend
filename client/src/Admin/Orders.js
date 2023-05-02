@@ -12,7 +12,7 @@ export default function Orders() {
   //GET DATA FROM DATABASE
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/orders/get");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/orders/get`);
       setDataorders(res.data);
     };
     fetch();
@@ -20,7 +20,7 @@ export default function Orders() {
 
   // DELETE CATEGORY
   const handldeleteuser = (id) => {
-    axios.delete(`/api/orders/${id}`).then(() => {
+    axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/orders/${id}`).then(() => {
       alert("Order has been deleted..");
       window.location.reload();
     });

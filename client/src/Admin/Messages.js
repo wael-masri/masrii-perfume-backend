@@ -12,7 +12,7 @@ export default function Message() {
   //GET DATA FROM DATABASE
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("/api/messages/");
+      const res = await axios.get(`${process.env.REACT_APP_URL_BACKEND}/api/messages/`);
       setDatamessages(res.data);
     };
     fetch();
@@ -20,7 +20,7 @@ export default function Message() {
 
   // DELETE CATEGORY
   const handldeletemessage = (id) => {
-    axios.delete(`/api/messages/${id}`).then(() => {
+    axios.delete(`${process.env.REACT_APP_URL_BACKEND}/api/messages/${id}`).then(() => {
       alert("Message has been deleted..");
       window.location.reload();
     });
