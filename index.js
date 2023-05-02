@@ -69,18 +69,18 @@ app.use("/api/subscribes", subscribesRoute);
 app.use("/api/messages", messagesRoute);
 
 // serve static assets if in production
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "/client/build")));
-//   app.use(express.static(path.join(__dirname, "/Images")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.use(express.static(path.join(__dirname, "/Images")));
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-//   });
-// } else {
-//   app.get("/", (req, res) => {
-//     res.send("api running");
-//   });
-// }
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("api running");
+  });
+}
 
 // BACKEND RUNMIN IN POST 5000 HERE
 const port = process.env.PORT || 5000;
